@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+    background-color: {{backgroundColor}};
+ }
+
+
+#main-container {
+  	text-align: left;
+	display: block;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+#image-video {
+	float: left;
+  	padding-right: 20px;
+}
+
+.text {
+  	font-family: 'Megamax Jones'; 
+  	color: black;
+  	font-size: {{textSize}}px;
+	padding-top: 20px;
+  	padding-left: 10px;
+  	letter-spacing: 0px;
+    margin-bottom: -30px;
+  	box-size: {{textSize}};
+  	-webkit-text-fill-color: transparent;
+  	-webkit-text-stroke: {strokeSize}px {strokeColor};
+    -webkit-background-clip: text;
+}
+.blue {
+    background: repeating-linear-gradient(#84E3EF 0%, #84E3EF 40%, #EEEBEF 40%, #EEEBEF 60%, #84E3EF 60%, #84E3EF 100%); /*Blue*/
+  	-webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.red {
+    background: repeating-linear-gradient(#BD5908 0%, #BD5908 40%, #FFC35A 40%, #FFC35A 60%, #BD5908 60%, #BD5908 100%); /*Red*/
+  	-webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.green {
+    background: repeating-linear-gradient(#78CAA8 0%, #78CAA8 40%, #E0F8E0 40%, #E0F8E0 60%, #78CAA8 60%, #78CAA8 100%); /*Green*/
+  	-webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.purple {
+	background: repeating-linear-gradient(#D090E0 0%, #D090E0 40%, #F8D8E0 40%, #F8D8E0 60%, #D090E0 60%, #D090E0 100%); /*Purple*/
+  	-webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.gold {
+    background: repeating-linear-gradient(#BB9720 0%, #BB9720 40%, #EFE09C 40%, #EFE09C 60%, #BB9720 60%, #BB9720 100%); /*Gold*/
+  	-webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.yellow {
+    background: repeating-linear-gradient(#84E300 0%, #84E300 40%, #EEEB00 40%, #EEEB00 60%, #84E300 60%, #84E300 100%); /*Gold*/
+  	-webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.brown {
+    background: repeating-linear-gradient(#8D5900 0%, #8D5900 40%, #FFC300 40%, #FFC300 60%, #8D5900 60%, #8D5900 100%); /*Gold*/
+  	-webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.salmon {
+    background: repeating-linear-gradient(#EF8E84 0%, #EF8E84 40%, #ECEFEB 40%, #ECEFEB 60%, #EF8E84 60%, #EF8E84 100%); /*Gold*/
+  	-webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.navy {
+    background: repeating-linear-gradient(#096ABD 0%, #096ABD 40%, #5B95FF 40%, #5B95FF 60%, #096ABD 60%, #096ABD 100%); /*Gold*/
+  	-webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.pink {
+    background: repeating-linear-gradient(#CA7899 0%, #CA7899 40%, #F8E0F8 40%, #F8E0F8 60%, #CA7899 60%, #CA7899 100%); /*Gold*/
+  	-webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.purpura {
+    background: repeating-linear-gradient(#8400EF 0%, #8400EF 40%, #EE00EF 40%, #EE00EF 60%, #8400EF 60%, #8400EF 100%); /*Gold*/
+  	-webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.blood {
+    background: repeating-linear-gradient(#BD0008 0%, #BD0008 40%, #FF005A 40%, #FF005A 60%, #BD0008 60%, #BD0008 100%); /*Gold*/
+  	-webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.white {
+    background: repeating-linear-gradient(#BABABA 0%, #BABABA 40%, #EDEDED 40%, #EDEDED 60%, #BABABA 60%, #BABABA 100%); /*Gold*/
+  	-webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.gray {
+    background: repeating-linear-gradient(#636363 0%, #636363 40%, #ADADAD 40%, #ADADAD 60%, #636363 60%, #636363 100%); /*Gold*/
+  	-webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
