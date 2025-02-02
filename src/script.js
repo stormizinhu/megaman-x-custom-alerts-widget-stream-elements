@@ -1,16 +1,18 @@
 let totalGlobal;
 let currentGlobal;
 let newQuantity;
-var selectedVoice = null;
 
 const ttsTime = '{ttsTime}';
 const ttsActive = '{ttsActive}';
 const ttsSpeed = '{ttsSpeed}';
-var ttsLang = '{ttsLanguage}';
+const ttsLang = '{ttsLanguage}';
 const soundsVolume = '{soundsVolume}';
 const ttsVolume = '{ttsVolume}';
 
 const typeSound = new Audio("https://www.myinstants.com/media/sounds/mmx-typing-sound.mp3");
+
+let colorText = '{colorText}';
+let showTest = '{colorShow}';
 
 const sounds = {
   follow: new Audio("{followSound}"),
@@ -23,6 +25,28 @@ const sounds = {
   raid: new Audio("{raidSound}"),
   store: new Audio("{storeSound}")
 };
+
+const box = {
+  	test: '{boxTest}',
+	width: '{boxWidth}',
+  	height: '{boxHeight}',
+  	speed: '{boxSpeed}',
+  	duration: '{boxDuration}',
+  	startDelay: '{boxStartDelay}',
+    endDelay: '{boxEndDelay}',
+};
+	const textbox = document.getElementById('alerts');
+function mostraCaixa() {
+
+
+   setTimeout(() => {
+    	textbox.classList.add('show');
+    }, box.startDelay);
+
+	setTimeout(() => {
+    	textbox.classList.remove('show');
+    }, box.endDelay);
+}
 
 const size = '{mediaSize}';
 
@@ -80,6 +104,14 @@ const divs = {
   msg: document.getElementById("msg"),
 };
 
+if (showTest === 'yes') {
+  divs.alert.textContent = colorText;
+  textbox.classList.add('show');
+} else {
+  divs.alert.textContent = '';
+  textbox.classList.remove('show');
+}
+
 const alerts = {
   follow: "{followAlert}",
   sub: "{subAlert}",
@@ -128,6 +160,8 @@ const times = {
 
 const colors = {
   followAlert: "{followAlertColor}",
+  
+  colorTest: "{colorTest}",
 
   subAlert: "{subAlertColor}",
   subAmount: "{subAmountColor}",
@@ -197,8 +231,6 @@ function chamaTTS(arg) {
   	setTimeout(arg, ttsTime)
 }
 
-chamaTTS(sendTTSRequest(ttsTest));
-
 function obterValoresDoItem(redemption) {
   const url = 'https://api.streamelements.com/kappa/v2/store/5fe73f8410bf4916d2a4b682/items';
   return fetch(url)
@@ -266,38 +298,19 @@ function changeColor(color1, color2, color3) {
   divs.msg.classList.add(color3);
 }
 
-function showDiv() {
-  myDiv.style.display = "block";
-
-  setTimeout(function () {
-    myDiv.style.opacity = 1;
-  }, 10);
-}
-
-function hideDiv() {
-  myDiv.style.opacity = 0;
-
-  setTimeout(function () {
-    myDiv.style.display = "none";
-  }, 1000);
-}
+changeColor(colors.colorTest);
 
 function raidText() {
   myDiv.style.textAlign = "center";
 }
 
 async function typeWriter(elementID, text, variable, callback) {
-  showDiv();
+  mostraCaixa();
   const typeSpeed = 60;
   let i = 0;
   const element = document.getElementById(elementID);
-  const newText = text
-    .replace("{user}", variable)
-    .replace("{amount}", variable)
-    .replace("{receiver}", variable)
-    .replace("{sender}", variable)
-    .replace("{item}", variable)
-    .replace(/Cheer\w+/g, "");
+  const newText = text.replace(/\{(\w+)\}/g, variable)
+  					  .replace(/Cheer\d+/g, "");
 
   async function typeChar() {
     element.innerHTML += newText[i];
@@ -327,7 +340,6 @@ async function typeWriter(elementID, text, variable, callback) {
 
 
 function clearContent() {
-  hideDiv();
   divs.alert.innerHTML = "";
   divs.amount.innerHTML = "";
   divs.msg.innerHTML = "";
@@ -391,6 +403,16 @@ window.addEventListener("onEventReceived", function (obj) {
   const listener = obj.detail.listener.split("-")[0];
   const event = obj.detail.event;
 
+  if(event.listener === 'widget-button'){
+
+    if(event.field === "boxTest"){
+      mostraCaixa()
+    }
+    if(event.field === "ttsTest"){
+      chamaTTS(sendTTSRequest(ttsTest));
+    }
+  } 
+
   if (event.type === "follower") {
     if (includeFollowers) {
       chooseMedia(choose.follow, media.follow, size, size);
@@ -433,8 +455,7 @@ window.addEventListener("onEventReceived", function (obj) {
           sounds.sub.play();
           typeWriter("alert", alerts.sub, event.name, function () {
             typeWriter("amount", amounts.sub, event.amount, function () {
-              typeWriter("msg", messages.sub, event.name);
-              //typeWriter("msg", event.message, event.name);
+              typeWriter("msg", event.message, event.name);
             });
           });
         }, times.sub);

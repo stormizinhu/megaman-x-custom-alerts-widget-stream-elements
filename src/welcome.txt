@@ -1,0 +1,21 @@
+Hi, I'm Stormizinhu and i am a big fan 
+of Mega Man so i developed this alerts 
+based on Mega Man X Dialogue Box.
+
+Just set you "Alert", "Amount" and
+"Message" Messsages, with their own
+possible Variables as you wish.
+
+You can set Audio, Image and Video for 
+each one (None, Image or Video).
+Alto the alerts Duration and Delay.
+
+30 colors to choose (the first 6 ones is 
+from X - X3, than i created another 8 
+and the others 16 is from Mega Man X8 Demake).
+
+Now it has TTS support! Choose if you
+want it active, one of various languages 
+and variations and it's volume.
+
+Feel free to ask me anything.
