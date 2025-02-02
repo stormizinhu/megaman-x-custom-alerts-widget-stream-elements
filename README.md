@@ -6,7 +6,7 @@
 - **3.0** - Refatoração para Obejtos, visando simplificação e redução de redundância.
 - **3.1** - Inclusão de comunicação direta à API do Stream Elements para resgatar Nome, Quantidade e Mensagem de Item resgatado na Store.
 - **4.0** - Adicionado uma API de Text-to-Speak usada pelo próprio Stream Elements, com 119 vozes disponíveis (entre idiomas e variações).
-- **4.5** TBA - Nova refatoração em um Objeto mais conciso, com menos redundanciase mais objetividade.
+- **4.5** TBA - Nova refatoração em um Objeto mais conciso, com menos redundancias e mais objetividade.
 
 ## Resumo
 - Todo alerta enviado pelo Stream Elements, ativa a caixa de alertas customizada, escrevendo seu conteudo como uma máquina de escrever, com fade in e fade out, alterando os devidos campos de Usuário e Quantidades.
