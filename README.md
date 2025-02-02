@@ -6,6 +6,8 @@
 
 ![Imagem do Projeto](https://i.imgur.com/kKVrnUz.png)
 
+Video demonstrativo - https://www.linkedin.com/feed/update/urn:li:activity:7163169444784017408?originalSubdomain=pt
+
 ## Tecnologias Usadas
 
 - `HTML`
