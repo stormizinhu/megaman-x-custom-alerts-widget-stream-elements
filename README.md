@@ -12,7 +12,7 @@ Video demonstrativo - https://www.linkedin.com/feed/update/urn:li:activity:71631
 
 - `HTML`
 - `CSS`
-- `JavaScritp`
+- `JavaScript`
 - `JSON`
 - `Twitch + Stream Elements APIs`
 
